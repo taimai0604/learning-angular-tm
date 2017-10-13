@@ -10,12 +10,17 @@ import { ContentRoutingModule } from './content-routing.module';
 import { ContentComponent } from './content.component';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
     CommonModule,
     ChartsModule,
     ContentRoutingModule,
+    FormsModule,
+    HttpModule
   ],
   declarations: [
     Page1Component,
@@ -24,7 +29,8 @@ import { FooterComponent } from '../footer/footer.component';
     HomeComponent,
     ContentComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent
   ],
   providers: [GuardContentGuard],
   exports : [Page1Component]

@@ -2,10 +2,12 @@
   <div class="container">
     <h1>Welcome</h1>
 
-    <form class="form">
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <button type="submit" id="login-button" (click) = "login($event)">Login</button>
+    <form class="form" #personForm="ngForm">
+      <input type="text" placeholder="Username" #username>
+      <input type="password" placeholder="Password" #password>
+      <button type="submit" id="login-button" (click) = "login($event,username.value,password.value)">Login</button>
+      <br/>
+      <button style="margin-top: 10px;" (click) = "register()">Register</button>
     </form>
   </div>
 

@@ -4,6 +4,10 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class GuardContentGuard implements CanActivate {
+  constructor() {
+
+  }
+
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
