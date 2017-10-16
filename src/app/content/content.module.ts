@@ -13,6 +13,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { HttpModule } from '@angular/http';
     ContentComponent,
     HeaderComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    TestComponent
   ],
   providers: [GuardContentGuard],
   exports : [Page1Component]

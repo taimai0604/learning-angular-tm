@@ -16,9 +16,7 @@ export class Page2Component implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/api/Users').subscribe(data => {
-      console.log(data);
-    });
+    this.userService.getPosts();
   }
 
   public login(event, username, password) {
@@ -26,15 +24,25 @@ export class Page2Component implements OnInit {
     this.person.password = password;
     event.preventDefault();
     console.log('====================================');
-    console.log(this.person);
-    this.userService.checkLogin(this.person);
+    this.userService.checkLogin(this.person).subscribe(
+      res => {
+        localStorage.setItem('currentUser', this.person);
+        console.log('--' + true);
+        $('form').fadeOut(500);
+        $('.wrapper').addClass('form-success');
+        setTimeout(() => {
+          window.location.reload();
+          this.router.navigate(['/page3']);
+        }, 2000);
+      },
+      err => {
+        console.log('--' + false);
+        alert('false');
+        $('#username').val('');
+        $('#password').val('');
+      }
+    );
     console.log('====================================');
-
-    $('form').fadeOut(500);
-    $('.wrapper').addClass('form-success');
-    setTimeout(() => {
-      // this.router.navigate(['/page3']);
-    }, 2000);
   }
 
   public register() {

@@ -7,6 +7,7 @@ import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
 import { ContentComponent } from './content.component';
 import { RegisterComponent } from './register/register.component';
+import { GuardContentGuard } from './guard-content.guard';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
           path: 'register', component: RegisterComponent
         },
         {
-          path: 'page3', component: Page3Component
+          path: 'page3', component: Page3Component,
+          canActivate: [GuardContentGuard]
         }
       ]
   }

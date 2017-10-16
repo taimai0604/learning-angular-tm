@@ -3,8 +3,8 @@
     <h1>Welcome</h1>
 
     <form class="form" #personForm="ngForm">
-      <input type="text" placeholder="Username" #username>
-      <input type="password" placeholder="Password" #password>
+      <input id="username" type="text" placeholder="Username" #username>
+      <input id="password" type="password" placeholder="Password" #password>
       <button type="submit" id="login-button" (click) = "login($event,username.value,password.value)">Login</button>
       <br/>
       <button style="margin-top: 10px;" (click) = "register()">Register</button>

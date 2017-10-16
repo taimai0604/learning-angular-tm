@@ -26,7 +26,9 @@ import { UserService } from './content/serives/user.service';
     ContentModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+   ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
